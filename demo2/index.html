@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>完整的例子</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="pubjs/v3.17.1-dist/ol.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+</head>
+
+<body>
+    <div class="toolsets">
+        <button id="search-position" class="search-position btn btn-success  btn-sm">查询坐标</button>
+        <button id="draw-point" class="draw-point btn btn-success  btn-sm">点</button>
+        <button id="draw-line" class="draw-line btn btn-success  btn-sm">线</button>
+        <button id="draw-ploygon" class="draw-ploygon btn btn-success  btn-sm">多边形</button>
+        <button id="draw-circle" class="draw-circle btn btn-success  btn-sm">圆形</button>
+        <button id="draw-square" class="draw-square btn btn-success  btn-sm">菱形</button>
+        <button id="draw-box" class="draw-box btn btn-success  btn-sm">矩形</button>
+        <button id="reshape" class="reshape btn btn-info  btn-sm">修改形状</button>
+        <button id="print" class="print btn btn-info  btn-sm">打印地图</button>
+    </div>
+    <!-- 打印地图的设置 -->
+    <form class="form print-form">
+        <label>Page size </label>
+        <select id="format">
+            <option value="a0">A0 (slow)</option>
+            <option value="a1">A1</option>
+            <option value="a2">A2</option>
+            <option value="a3">A3</option>
+            <option value="a4" selected>A4</option>
+            <option value="a5">A5 (fast)</option>
+        </select>
+        <label>Resolution </label>
+        <select id="resolution">
+            <option value="72">72 dpi (fast)</option>
+            <option value="150">150 dpi</option>
+            <option value="300">300 dpi (slow)</option>
+        </select>
+    </form>
+    <div id="map" class="map">
+        <div style="display: none;">
+            <!-- Clickable label for Vienna -->
+            <a class="overlay" id="Shanghai" target="_blank" href="http://en.wikipedia.org/wiki/Shanghai">Shanghai</a>
+            <div id="marker" title="Marker"></div>
+            <!-- Popup -->
+            <div id="popup" title="点击查询:" class="ol-popup">
+                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                <div id="popup-content"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="pubjs/jquery.js"></script>
+    <script type="text/javascript" src="pubjs/v3.17.1-dist/ol-debug.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>

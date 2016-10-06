@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>1-TileWMS</title>
+    <link rel="stylesheet" href="css/ol.css">
+</head>
+
+<body>
+    <div id="map">
+    </div>
+    <script type="text/javascript" src="js/ol-debug.js"></script>
+    <script type="text/javascript">
+    /*初始化地图*/
+    var map = new ol.Map({
+        target: 'map', //document.getElementById("map")
+
+        layers: [
+            new ol.layer.Tile({
+                title: "Global Imagery",
+                source: new ol.source.TileWMS({
+                    url: 'http://demo.boundlessgeo.com/geoserver/wms',
+                    params: {
+                        'LAYERS': 'ne:NE1_HR_LC_SR_W_DR'
+                    }
+                })
+            })
+        ],
+        view: new ol.View({
+            projection: 'EPSG:4326', //WGS 84
+            center: [0, 0],
+            zoom: 2,
+            maxResolution: 0.703125
+        }),
+
+    });
+    </script>
+</body>
+
+</html>
